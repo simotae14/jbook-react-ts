@@ -28,6 +28,9 @@ const App = () => {
     if (!ref.current) {
       return;
     }
+    
+    // reset the content of the iframe every click
+    iframe.current.srcdoc = html;
 
     const result = await ref.current.build({
       entryPoints: ['index.js'],
