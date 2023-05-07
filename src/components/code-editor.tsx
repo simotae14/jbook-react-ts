@@ -1,7 +1,12 @@
 import MonacoEditor from "@monaco-editor/react";
 
-const CodeEditor = () => {
-  return <MonacoEditor 
+interface CodeEditorProps {
+  initialValue: string;
+}
+
+const CodeEditor: React.FC<CodeEditorProps> = ({ initialValue }) => {
+  return <MonacoEditor
+    value={initialValue} // is the initial value
     theme="dark" 
     language="javascript" 
     height="500px"
